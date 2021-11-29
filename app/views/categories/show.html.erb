@@ -4,5 +4,31 @@
   Category: <%= @category.name %>
 </h1>
 
+<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+  <h2>Add a Task</h2>
+  <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.label :details %><br>
+      <%= form.text_area :details %>
+    </p>
+    <p>
+      <%= form.label :date %><br>
+      <%= form.date_select :date %>
+    </p>
+    <br/>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</div>
+
+<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+  <h2>Tasks</h2>
+</div>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
