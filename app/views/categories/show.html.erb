@@ -12,10 +12,10 @@
     <tbody>
       <% @category.tasks.each do |task| %>
         <tr>
-          <td><b><%= task.name %></b></td>
+          <td><%= task.name %></td>
           <td>Show</td>
           <td>Edit</td>
-          <td>Destroy</td>
+          <td><%= link_to 'Destroy', [task.category, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -25,22 +25,22 @@
 <div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
   <h2>Add a Task</h2>
   <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-    <p>
+    <div class="field">
       <%= form.label :name %><br>
       <%= form.text_field :name %>
-    </p>
-    <p>
+    </div>
+    <div class="field">
       <%= form.label :details %><br>
       <%= form.text_area :details %>
-    </p>
-    <p>
+    </div>
+    <div class="field">
       <%= form.label :date %><br>
       <%= form.date_select :date %>
-    </p>
+    </div>
     <br>
-    <p>
+    <div class="actions">
       <%= form.submit %>
-    </p>
+    </div>
   <% end %>
 </div>
 
