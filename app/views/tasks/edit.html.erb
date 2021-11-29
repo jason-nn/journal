@@ -1,0 +1,24 @@
+<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+  <h2>Edit a Task</h2>
+  <%= form_with model: [ @category, @task ] do |form| %>
+    <div class="field">
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= form.label :details %><br>
+      <%= form.text_area :details %>
+    </div>
+    <div class="field">
+      <%= form.label :date %><br>
+      <%= form.date_select :date %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Show', category_task_path(@task.category, @task) %> |
+<%= link_to 'Back', category_path(@category) %>
