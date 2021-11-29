@@ -1,48 +1,44 @@
 <p id="notice"><%= notice %></p>
-
 <div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
-  <h2><%= @category.name %> Tasks</h2>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="4"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @category.tasks.each do |task| %>
-        <tr>
-          <td><%= task.name %></td>
-          <td><%= link_to 'Show', category_task_path(task.category, task) %></td>
-          <td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
-          <td><%= link_to 'Destroy', [task.category, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+	<h2><%= @category.name %> Tasks</h2>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="4"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @category.tasks.each do |task| %>
+				<tr>
+					<td><%= task.name %></td>
+					<td><%= link_to 'Show', category_task_path(task.category, task) %></td>
+					<td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
+					<td><%= link_to 'Destroy', [task.category, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
-
 <div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
-  <h2>Add a Task</h2>
-  <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-    <div class="field">
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-    </div>
-    <div class="field">
-      <%= form.label :details %><br>
-      <%= form.text_area :details %>
-    </div>
-    <div class="field">
-      <%= form.label :date %><br>
-      <%= form.date_select :date %>
-    </div>
-    <br>
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  <% end %>
+	<h2>Add a Task</h2>
+	<%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+		<div class="field">
+			<%= form.label :name %><br>
+			<%= form.text_field :name %>
+		</div>
+		<div class="field">
+			<%= form.label :details %><br>
+			<%= form.text_area :details %>
+		</div>
+		<div class="field">
+			<%= form.label :date %><br>
+			<%= form.date_select :date %>
+		</div>
+		<br>
+		<div class="actions">
+			<%= form.submit %>
+		</div>
+	<% end %>
 </div>
-
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
