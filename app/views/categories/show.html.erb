@@ -13,7 +13,7 @@
       <% @category.tasks.each do |task| %>
         <tr>
           <td><%= task.name %></td>
-          <td>Show</td>
+          <td><%= link_to 'Show', category_task_path(task.category, task) %></td>
           <td>Edit</td>
           <td><%= link_to 'Destroy', [task.category, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
