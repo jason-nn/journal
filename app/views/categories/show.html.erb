@@ -10,8 +10,8 @@
 			<% @category.tasks.each do |task| %>
 				<tr>
 					<td><%= task.name %></td>
-					<td><%= link_to 'Show', category_task_path(task.category, task) %></td>
-					<td><%= link_to 'Destroy', [task.category, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					<td><%= button_to 'Show', category_task_path(task.category, task), :method => "get" %></td>
+					<td><%= button_to 'Destroy', [task.category, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				</tr>
 			<% end %>
 		</tbody>
@@ -21,15 +21,15 @@
 	<h2>Add a Task</h2>
 	<%= form_with model: [ @category, @category.tasks.build ] do |form| %>
 		<div class="field">
-			<%= form.label :name %><br>
+			<%= form.label :name %>
 			<%= form.text_field :name %>
 		</div>
 		<div class="field">
-			<%= form.label :details %><br>
+			<%= form.label :details %>
 			<%= form.text_area :details %>
 		</div>
 		<div class="field">
-			<%= form.label :date %><br>
+			<%= form.label :date %>
 			<%= form.date_select :date %>
 		</div>
 		<br>
@@ -38,6 +38,7 @@
 		</div>
 	<% end %>
 </div>
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= button_to 'Edit', edit_category_path(@category), :method => "get" %>
+<br>
+<%= button_to 'Back', categories_path, :method => "get" %>
 <p id="notice"><%= notice %></p>

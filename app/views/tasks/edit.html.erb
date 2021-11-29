@@ -2,15 +2,15 @@
 	<h2>Edit a Task</h2>
 	<%= form_with model: [ @category, @task ] do |form| %>
 		<div class="field">
-			<%= form.label :name %><br>
+			<%= form.label :name %>
 			<%= form.text_field :name %>
 		</div>
 		<div class="field">
-			<%= form.label :details %><br>
+			<%= form.label :details %>
 			<%= form.text_area :details %>
 		</div>
 		<div class="field">
-			<%= form.label :date %><br>
+			<%= form.label :date %>
 			<%= form.date_select :date %>
 		</div>
 		<br>
@@ -19,4 +19,3 @@
 		</div>
 	<% end %>
 </div>
-<%= link_to 'Back', category_task_path(@task.category, @task) %>

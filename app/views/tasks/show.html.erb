@@ -22,7 +22,7 @@
 		</tbody>
 	</table>
 </div>
-<td><%= link_to 'Edit', edit_category_task_path(@task.category, @task) %></td>
-|
-<%= link_to 'Back', category_path(@category) %>
+<td><%= button_to 'Edit', edit_category_task_path(@task.category, @task), :method => "get" %></td>
+<br>
+<%= button_to 'Back', category_path(@category), :method => "get" %>
 <p id="notice"><%= notice %></p>

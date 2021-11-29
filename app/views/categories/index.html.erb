@@ -10,9 +10,9 @@
 			<% @categories.each do |category| %>
 				<tr>
 					<td><%= category.name %></td>
-					<td><%= link_to 'Show', category %></td>
+					<td><%= button_to 'Show', category, :method => "get" %></td>
 					<td>
-						<%= link_to 'Destroy', category, method: :delete, data: {
+						<%= button_to 'Destroy', category, method: :delete, data: {
                     confirm: 'Are you sure?' } %>
 					</td>
 				</tr>
@@ -20,5 +20,5 @@
 		</tbody>
 	</table>
 </div>
-<%= link_to 'New Category', new_category_path %>
+<%= button_to 'New Category', new_category_path, :method => "get" %>
 <p id="notice"><%= notice %></p>
