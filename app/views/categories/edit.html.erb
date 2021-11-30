@@ -1,5 +1,5 @@
 <%= render 'form', category: @category, heading: 'Edit Category'%>
-<div class="box">
-	<%= link_to 'Back', @category %>
-</div>
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', @category, :class => "redirect" %>
+<% if notice %>
+	<div class="notice"><%= notice %></div>
+<% end %>

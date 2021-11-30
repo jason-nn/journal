@@ -5,7 +5,7 @@
 	</div>
 <% end %>
 <%= render @tasks %>
-<div class="box">
-	<%= link_to 'Back', root_path %>
-</div>
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', root_path, :class => "redirect" %>
+<% if notice %>
+	<div class="notice"><%= notice %></div>
+<% end %>

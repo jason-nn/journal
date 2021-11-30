@@ -23,13 +23,12 @@
 			<%= form.label :date %>
 			<%= form.date_select :date %>
 		</div>
-		<br>
 		<div class="actions">
 			<%= form.submit %>
 		</div>
 	<% end %>
 </div>
-<div class="box">
-	<%= link_to 'Back', category_task_path(@task.category, @task) %>
-</div>
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', category_task_path(@task.category, @task), :class => "redirect" %>
+<% if notice %>
+	<div class="notice"><%= notice %></div>
+<% end %>

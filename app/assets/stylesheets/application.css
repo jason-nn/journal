@@ -14,8 +14,173 @@
  *= require_self
  */
 
+@font-face {
+    font-family: CircularStd-Black;
+    src: url(/app/assets/fonts/CircularStd-Black.otf);
+}
+@font-face {
+    font-family: CircularStd-Bold;
+    src: url(/app/assets/fonts/CircularStd-Bold.otf);
+}
+@font-face {
+    font-family: CircularStd-Book;
+    src: url(/app/assets/fonts/CircularStd-Book.otf);
+}
+@font-face {
+    font-family: CircularStd-Medium;
+    src: url(/app/assets/fonts/CircularStd-Medium.otf);
+}
+
+*,
+td,
+p {
+    font-family: 'CircularStd-Book';
+    font-size: 0.95rem;
+    color: #352956;
+}
+
+h1,
+h2 {
+    font-family: 'CircularStd-Bold';
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.35rem;
+}
+
+a {
+    text-decoration: none;
+    color: #785dfb;
+}
+
+label {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+input {
+    font-family: 'CircularStd-Book';
+    color: #352956;
+    background-color: #f7f6fa;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    width: 200px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #785dfb;
+}
+
+textarea {
+    font-family: 'CircularStd-Book';
+    color: #352956;
+    background-color: #f7f6fa;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    width: 200px;
+    height: 4rem;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #785dfb;
+}
+
+select {
+    font-family: 'CircularStd-Book';
+    color: #352956;
+    background-color: #f7f6fa;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+select:focus {
+    outline: none;
+    border: 1px solid #785dfb;
+}
+
+input[type='submit'] {
+    font-family: 'CircularStd-Bold';
+    color: white;
+    background-color: #785dfb;
+    border: 1px solid #785dfb;
+    text-align: center;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: max-content;
+}
+
+input[type='submit']:hover {
+    color: #785dfb;
+    background-color: white;
+}
+
+.redirect {
+    text-decoration: none;
+    font-family: 'CircularStd-Bold';
+    color: white;
+    background-color: #785dfb;
+    border: 1px solid #785dfb;
+    text-align: center;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 100px;
+    cursor: pointer;
+    margin: 20px 0px;
+    display: block;
+    width: max-content;
+}
+
+.redirect:hover {
+    color: #785dfb;
+    background-color: white;
+}
+
 .box {
-    border: 1px solid black;
+    border: 1px solid #785dfb;
     padding: 10px 20px;
     margin: 20px 0px;
+}
+
+.notice {
+    font-family: 'CircularStd-Bold';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin: 20px 20px;
+    background-color: #f7f6fa;
+    border: 1px solid #00cc7d;
+    background-color: #00cc7d;
+    color: white;
 }

@@ -35,16 +35,13 @@
 			<%= form.label :date %>
 			<%= form.date_select :date %>
 		</div>
-		<br>
 		<div class="actions">
 			<%= form.submit %>
 		</div>
 	<% end %>
 </div>
-<div class="box">
-	<%= link_to 'Edit', edit_category_path(@category) %>
-</div>
-<div class="box">
-	<%= link_to 'Back', categories_path %>
-</div>
-<p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_category_path(@category), :class => "redirect" %>
+<%= link_to 'Back', categories_path, :class => "redirect" %>
+<% if notice %>
+	<div class="notice"><%= notice %></div>
+<% end %>
