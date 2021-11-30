@@ -1,0 +1,10 @@
+<h1>All Tasks</h1>
+<% if @tasks.length == 0 %>
+	<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+		<h2>No tasks yet.</h2>
+	</div>
+<% end %>
+<%= render @tasks %>
+<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+	<%= link_to 'Back', root_path %>
+</div>
