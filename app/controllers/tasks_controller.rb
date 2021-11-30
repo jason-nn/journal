@@ -1,40 +1,48 @@
 class TasksController < ApplicationController
+    before_action :set_category, only: %i[create show edit update destroy]
+    before_action :set_category_task, only: %i[show edit update destroy]
+
     def create
-        @category = Category.find(params[:category_id])
-        @task = @category.tasks.create(task_params)
-        redirect_to category_path(@category)
+        @task = @category.tasks.new(task_params)
+
+        if @task.save
+            redirect_to category_path(@category),
+                        notice: 'Task was successfully created.'
+        else
+            redirect_to category_path(@category)
+        end
     end
 
-    def show
-        @category = Category.find(params[:category_id])
-        @task = @category.tasks.find(params[:id])
-    end
+    def show; end
 
-    def edit
-        @category = Category.find(params[:category_id])
-        @task = @category.tasks.find(params[:id])
-    end
+    def edit; end
 
     def update
-        @category = Category.find(params[:category_id])
-        @task = @category.tasks.find(params[:id])
         if @task.update(task_params)
-            redirect_to category_path(@category)
+            redirect_to category_path(@category),
+                        notice: 'Category was successfully updated.'
         else
             render :edit
         end
     end
 
     def destroy
-        @category = Category.find(params[:category_id])
-        @task = @category.tasks.find(params[:id])
         @task.destroy
-        redirect_to category_path(@category)
+        redirect_to category_path(@category),
+                    notice: 'Category was successfully destroyed.'
     end
 
     private
 
     def task_params
         params.require(:task).permit(:name, :details, :date)
+    end
+
+    def set_category
+        @category = Category.find(params[:category_id])
+    end
+
+    def set_category_task
+        @task = @category.tasks.find(params[:id])
     end
 end
