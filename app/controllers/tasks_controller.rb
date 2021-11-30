@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     def update
         if @task.update(task_params)
             redirect_to category_path(@category),
-                        notice: 'Category was successfully updated.'
+                        notice: 'Task was successfully updated.'
         else
             render :edit
         end
@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     def destroy
         @task.destroy
         redirect_to category_path(@category),
-                    notice: 'Category was successfully destroyed.'
+                    notice: 'Task was successfully destroyed.'
     end
 
     private
