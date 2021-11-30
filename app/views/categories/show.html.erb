@@ -1,5 +1,5 @@
 <h1><%= @category.name %></h1>
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<h2>Tasks</h2>
 	<table>
 		<thead>
@@ -20,7 +20,7 @@
 		</tbody>
 	</table>
 </div>
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<h2>Add a Task</h2>
 	<%= form_with model: [ @category, @category.tasks.build ] do |form| %>
 		<div class="field">
@@ -41,10 +41,10 @@
 		</div>
 	<% end %>
 </div>
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<%= link_to 'Edit', edit_category_path(@category) %>
 </div>
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<%= link_to 'Back', categories_path %>
 </div>
 <p id="notice"><%= notice %></p>

@@ -1,4 +1,4 @@
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<h2><%= @task.name %></h2>
 	<table>
 		<thead>
@@ -22,10 +22,10 @@
 		</tbody>
 	</table>
 </div>
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<%= link_to 'Edit', edit_category_task_path(@task.category, @task) %>
 </div>
-<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+<div class="box">
 	<%= link_to 'Back', category_path(@category) %>
 </div>
 <p id="notice"><%= notice %></p>
