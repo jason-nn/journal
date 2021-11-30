@@ -1,0 +1,31 @@
+<h1>Today's Tasks | <%= Date.today %></h1>
+<% if @tasks.length == 0 %>
+	<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+		<h2>No tasks for today yet.</h2>
+	</div>
+<% end %>
+<% @tasks.each do |task| %>
+	<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+		<h2><%= task.name %></h2>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Category:</td>
+					<td><%= task.category.name %></td>
+				</tr>
+				<tr>
+					<td>Details:</td>
+					<td><%= task.details %></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<% end %>
+<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
+	<%= link_to 'Categories', categories_path %>
+</div>

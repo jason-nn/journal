@@ -2,6 +2,14 @@ class TasksController < ApplicationController
     before_action :set_category, only: %i[create show edit update destroy]
     before_action :set_category_task, only: %i[show edit update destroy]
 
+    def today
+        @tasks = Task.where(date: Date.today)
+    end
+
+    def all
+        @tasks = Task.all
+    end
+
     def create
         @task = @category.tasks.new(task_params)
 
