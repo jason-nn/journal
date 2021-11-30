@@ -1,4 +1,5 @@
-<h1>Today's Tasks | <%= Date.today %></h1>
+<h1>Today's Tasks</h1>
+<%= Date.today %>
 <% if @tasks.length == 0 %>
 	<div style="border: 1px solid black; padding: 10px 20px; margin: 20px 0px">
 		<h2>No tasks for today yet.</h2>
