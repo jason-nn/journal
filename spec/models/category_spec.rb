@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Model Spec: Category', type: :model do
     before :each do
-        @name = 'Test Category'
+        @name = 'Category'
         @category = Category.create(name: @name)
     end
 
