@@ -14,7 +14,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
       @swarm.tasks.create(
         name: 'Environment Setup',
         details: 'set up local environment and install necessary packages',
-        date: Date.tomorrow
+        date: Date.current + 3
       )
     end
 
@@ -164,7 +164,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         click_on 'Destroy'
       end
     
-      it 'updates a task' do
+      it 'destroys a task' do
         expect(page).not_to have_content('System Specs')
       end
 
