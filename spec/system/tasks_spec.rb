@@ -157,4 +157,21 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
     end
 
+    describe 'Destroying a Task' do
+
+      before :each do
+        visit category_path(@avion)
+        click_on 'Destroy'
+      end
+    
+      it 'updates a task' do
+        expect(page).not_to have_content('System Specs')
+      end
+
+      it 'shows a success notice' do
+        expect(page).to have_content('Task was successfully destroyed.')
+      end
+
+    end
+
 end
