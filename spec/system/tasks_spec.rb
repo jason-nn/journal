@@ -61,4 +61,30 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
     end
 
+    describe 'All Tasks' do
+
+      before :each do
+        visit tasks_path
+      end
+
+      it 'shows title' do
+        expect(page).to have_content('All Tasks')
+      end
+
+      it 'shows all tasks' do
+        expect(page).to have_content('Category: Avion')
+        expect(page).to have_content('System Specs')
+        expect(page).to have_content('write system specs for journal app')
+        expect(page).to have_content('Category: Swarm')
+        expect(page).to have_content('Environment Setup')
+        expect(page).to have_content('set up local environment and install necessary packages')
+      end
+
+      it 'has a button that goes to today\'s tasks' do
+        click_on 'Back'
+        expect(page).to have_content('Today\'s Tasks')
+      end
+
+    end
+
 end
