@@ -1,19 +1,19 @@
 # database.yml
 
 default: &default
-    adapter: postgresql
-    encoding: unicode
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    username: postgres
-    password: postgres
-    host: localhost
-    port: 5432
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
 development:
-    <<: *default
-    database: blog_dev
+  <<: *default
+  database: journal_dev
 test:
-    <<: *default
-    database: blog_test
+  <<: *default
+  database: journal_test
 production:
-    <<: *default
-    database: blog_prod
+  <<: *default
+  database: journal_prod
