@@ -80,7 +80,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         expect(page).to have_content('set up local environment and install necessary packages')
       end
 
-      it 'has a button that goes to today\'s tasks' do
+      it 'has a button that goes back to today\'s tasks' do
         click_on 'Back'
         expect(page).to have_content('Today\'s Tasks')
       end
@@ -123,6 +123,16 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
       it 'shows task date' do
         expect(page).to have_content(Date.today)
+      end
+
+      it 'has a button that goes to edit' do
+        click_on 'Edit'
+        expect(page).to have_content('Edit a Task')
+      end
+
+      it 'has a button that goes to back to category' do
+        click_on 'Back'
+        expect(page.html).to have_content('Avion')
       end
 
     end
