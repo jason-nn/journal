@@ -87,4 +87,47 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
     end
 
+    describe 'Creating a Task' do
+
+      before :each do
+        visit category_path(@avion)
+      end
+    
+      before :all do
+        fill_in 'Name', with: 'Presentation'
+        fill_in 'Details', with: 'present journal app on Saturday'
+        click_on 'Create Task'
+      end
+
+      it 'creates a task' do
+        expect(page).to have_content('Presentation')
+      end
+
+      it 'shows a success notice' do
+        expect(page).to have_content('Task was successfully created.')
+      end
+
+    end
+
+    describe 'Reading a Task' do
+
+      before :all do
+        visit category_path(@avion)
+        click_on 'Show'
+      end
+    
+      it 'shows task name' do
+        expect(page).to have_content('System Specs')
+      end
+
+      it 'shows task details' do
+        expect(page).to have_content('write system specs for journal app')
+      end
+
+      it 'shows task date' do
+        expect(page).to have_content(Date.today)
+      end
+
+    end
+
 end
