@@ -88,17 +88,14 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     end
 
     describe 'Creating a Task' do
-
+      
       before :each do
         visit category_path(@avion)
-      end
-    
-      before :all do
         fill_in 'Name', with: 'Presentation'
         fill_in 'Details', with: 'present journal app on Saturday'
         click_on 'Create Task'
       end
-
+      
       it 'creates a task' do
         expect(page).to have_content('Presentation')
       end
@@ -111,7 +108,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
     describe 'Reading a Task' do
 
-      before :all do
+      before :each do
         visit category_path(@avion)
         click_on 'Show'
       end
