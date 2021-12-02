@@ -127,4 +127,24 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
     end
 
+    describe 'Updating a Task' do
+
+      before :each do
+        visit category_path(@avion)
+        click_on 'Show'
+        click_on 'Edit'
+        fill_in 'Name', with: 'Journal System Specs'
+        click_on 'Update Task'
+      end
+    
+      it 'updates a task' do
+        expect(page).to have_content('Journal System Specs')
+      end
+
+      it 'shows a success notice' do
+        expect(page).to have_content('Task was successfully updated.')
+      end
+
+    end
+
 end
