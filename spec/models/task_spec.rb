@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Model Spec: Task', type: :model do
     before :each do
-        @category = Category.create(name: 'Category')
+        @user = create(:user)
+        @category = Category.create(name: 'Category', user_id: @user.id)
         @name = 'Task'
         @details = 'task details'
         @date = Date.today
         @task =
-            @category.tasks.create(name: @name, details: @details, date: @date)
+            @category.tasks.create(name: @name, details: @details, date: @date, user_id: @user.id)
     end
 
     it 'should not catch fire when you create an instance' do
