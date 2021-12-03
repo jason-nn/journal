@@ -64,7 +64,7 @@ h2 {
 
 a {
 	text-decoration: none;
-	color: #785dfb;
+	color: #4f42ec;
 }
 
 label {
@@ -88,7 +88,7 @@ input {
 
 input:focus {
 	outline: none;
-	border: 1px solid #785dfb;
+	border: 1px solid #4f42ec;
 }
 
 textarea {
@@ -109,7 +109,7 @@ textarea {
 
 textarea:focus {
 	outline: none;
-	border: 1px solid #785dfb;
+	border: 1px solid #4f42ec;
 }
 
 select {
@@ -128,14 +128,14 @@ select {
 
 select:focus {
 	outline: none;
-	border: 1px solid #785dfb;
+	border: 1px solid #4f42ec;
 }
 
 input[type='submit'] {
 	font-family: 'CircularStd-Bold';
 	color: white;
-	background-color: #785dfb;
-	border: 1px solid #785dfb;
+	background-color: #4f42ec;
+	border: 1px solid #4f42ec;
 	text-align: center;
 	padding: 0.5em;
 	padding-left: 2em;
@@ -148,7 +148,7 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-	color: #785dfb;
+	color: #4f42ec;
 	background-color: white;
 }
 
@@ -156,8 +156,8 @@ input[type='submit']:hover {
 	text-decoration: none;
 	font-family: 'CircularStd-Bold';
 	color: white;
-	background-color: #785dfb;
-	border: 1px solid #785dfb;
+	background-color: #4f42ec;
+	border: 1px solid #4f42ec;
 	text-align: center;
 	padding: 0.5em;
 	padding-left: 2em;
@@ -170,14 +170,14 @@ input[type='submit']:hover {
 }
 
 .redirect:hover {
-	color: #785dfb;
+	color: #4f42ec;
 	background-color: white;
 }
 
 .signout {
 	text-decoration: none;
 	font-family: 'CircularStd-Bold';
-	color: #785dfb;
+	color: #4f42ec;
 	background-color: white;
 	border: 1px solid white;
 	text-align: center;
@@ -194,11 +194,11 @@ input[type='submit']:hover {
 
 .signout:hover {
 	color: white;
-	background-color: #785dfb;
+	background-color: #4f42ec;
 }
 
 .box {
-	border: 1px solid #785dfb;
+	border: 1px solid #4f42ec;
 	padding: 10px 20px;
 	margin: 20px 0px;
 }
@@ -212,7 +212,6 @@ input[type='submit']:hover {
 	padding-left: 2em;
 	padding-right: 2em;
 	margin: 20px 20px;
-	background-color: #f7f6fa;
 	border: 1px solid #00cc7d;
 	background-color: #00cc7d;
 	color: white;
@@ -227,7 +226,6 @@ input[type='submit']:hover {
 	padding-left: 2em;
 	padding-right: 2em;
 	margin: 20px 20px;
-	background-color: #f7f6fa;
 	border: 1px solid #ea4435;
 	background-color: #ea4435;
 	color: white;
@@ -236,7 +234,7 @@ input[type='submit']:hover {
 .navbar {
 	width: 100vw;
 	height: 60px;
-	background-color: #785dfb;
+	background-color: #4f42ec;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -253,4 +251,14 @@ input[type='submit']:hover {
 
 input[type='checkbox'] {
 	width: 10px;
+}
+
+.navleft {
+	margin-left: 33px;
+}
+
+.navleft span {
+	font-size: 1rem;
+	font-family: 'CircularStd-Book';
+	color: white;
 }
