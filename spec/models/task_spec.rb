@@ -29,19 +29,19 @@ RSpec.describe 'Model Spec: Task', type: :model do
 
     it 'should need a name to be valid' do
         expect(
-            @category.tasks.create(name: nil, details: @details, date: @date),
+            @category.tasks.create(name: nil, details: @details, date: @date, user_id: @user.id),
         ).not_to be_valid
     end
 
     it 'should need details to be valid' do
         expect(
-            @category.tasks.create(name: @name, details: nil, date: @date),
+            @category.tasks.create(name: @name, details: nil, date: @date, user_id: @user.id),
         ).not_to be_valid
     end
 
     it 'should need a date to be valid' do
         expect(
-            @category.tasks.create(name: @name, details: @details, date: nil),
+            @category.tasks.create(name: @name, details: @details, date: nil, user_id: @user.id),
         ).not_to be_valid
     end
 end
