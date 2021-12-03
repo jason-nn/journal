@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Request Spec: Category', type: :request do
   before :each do
-    sign_in create(:user)
+    @user = create(:user)
+    sign_in @user
   end
 
   it 'GET /categories' do
@@ -18,14 +19,14 @@ RSpec.describe 'Request Spec: Category', type: :request do
   end
   
   it 'GET /categories/:id/edit' do
-    category = Category.create(name: 'Test')
+    category = Category.create(name: 'Test', user_id: @user.id)
     get edit_category_path(category)
     expect(response).to have_http_status(200)
     expect(response).to render_template(:edit)
   end
   
   it 'GET /categories/:id' do
-    category = Category.create(name: 'Test')
+    category = Category.create(name: 'Test', user_id: @user.id)
     get category_path(category)
     expect(response).to have_http_status(200)
     expect(response).to render_template(:show)
