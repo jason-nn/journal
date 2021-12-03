@@ -4,22 +4,25 @@ RSpec.describe 'System Spec: Categories', type: :system do
     before { driven_by(:rack_test) }
 
     before :all do
-      @avion = Category.create(name: 'Avion')
+      @user = create(:user)
+      @avion = Category.create(name: 'Avion', user_id: @user.id)
       @avion.tasks.create(
         name: 'System Specs',
         details: 'write system specs for journal app',
-        date: Date.today
+        date: Date.today, 
+        user_id: @user.id
       )
     end
 
     after :all do
       @avion.destroy
+      @user.destroy
     end
 
     describe 'All Categories' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit categories_path
       end
 
@@ -48,7 +51,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Creating a Category' do
       
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit categories_path
         click_on 'New Category'
         fill_in 'Name', with: 'Ateneo'
@@ -68,7 +71,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Reading a Category' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit categories_path
         click_on 'Show'
       end
@@ -101,7 +104,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Updating a Category' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit category_path(@avion)
         click_on 'Edit'
         fill_in 'Name', with: 'Avion School'
@@ -121,7 +124,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Destroying a Category' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit categories_path
         click_on 'Destroy'
       end
