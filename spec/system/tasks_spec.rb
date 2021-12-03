@@ -4,29 +4,33 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     before { driven_by(:rack_test) }
 
     before :all do
-      @avion = Category.create(name: 'Avion')
+      @user = create(:user)
+      @avion = Category.create(name: 'Avion', user_id: @user.id)
       @avion.tasks.create(
         name: 'System Specs',
         details: 'write system specs for journal app',
-        date: Date.today
+        date: Date.today, 
+        user_id: @user.id
       )
-      @swarm = Category.create(name: 'Swarm')
+      @swarm = Category.create(name: 'Swarm', user_id: @user.id)
       @swarm.tasks.create(
         name: 'Environment Setup',
         details: 'set up local environment and install necessary packages',
-        date: Date.current + 3
+        date: Date.current + 3, 
+        user_id: @user.id
       )
     end
 
     after :all do
       @avion.destroy
       @swarm.destroy
+      @user.destroy
     end
 
     describe 'Today\'s Tasks' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit root_path
       end
 
@@ -65,7 +69,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'All Tasks' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit tasks_path
       end
 
@@ -92,7 +96,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Creating a Task' do
       
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit category_path(@avion)
         fill_in 'Name', with: 'Presentation'
         fill_in 'Details', with: 'present journal app on Saturday'
@@ -112,7 +116,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Reading a Task' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit category_path(@avion)
         click_on 'Show'
       end
@@ -144,7 +148,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Updating a Task' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit category_path(@avion)
         click_on 'Show'
         click_on 'Edit'
@@ -165,7 +169,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Destroying a Task' do
 
       before :each do
-        sign_in create(:user)
+        sign_in @user
         visit category_path(@avion)
         click_on 'Destroy'
       end
