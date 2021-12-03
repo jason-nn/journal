@@ -40,12 +40,16 @@
 	padding: 33px;
 }
 
+body {
+	background-color: #f8f9fb;
+}
+
 *,
 td,
 p {
 	font-family: 'CircularStd-Book';
 	font-size: 0.95rem;
-	color: #352956;
+	color: black;
 }
 
 h1,
@@ -74,8 +78,8 @@ label {
 
 input {
 	font-family: 'CircularStd-Book';
-	color: #352956;
-	background-color: #f7f6fa;
+	color: black;
+	background-color: white;
 	border: 1px solid #ccc;
 	padding: 0.5em;
 	padding-left: 2em;
@@ -93,8 +97,8 @@ input:focus {
 
 textarea {
 	font-family: 'CircularStd-Book';
-	color: #352956;
-	background-color: #f7f6fa;
+	color: black;
+	background-color: white;
 	border: 1px solid #ccc;
 	padding: 0.5em;
 	padding-left: 2em;
@@ -114,8 +118,8 @@ textarea:focus {
 
 select {
 	font-family: 'CircularStd-Book';
-	color: #352956;
-	background-color: #f7f6fa;
+	color: black;
+	background-color: white;
 	border: 1px solid #ccc;
 	padding: 0.5em;
 	padding-left: 2em;
@@ -177,9 +181,9 @@ input[type='submit']:hover {
 .signout {
 	text-decoration: none;
 	font-family: 'CircularStd-Bold';
-	color: #4f42ec;
-	background-color: white;
-	border: 1px solid white;
+	color: white;
+	background-color: #4f42ec;
+	border: 1px solid #4f42ec;
 	text-align: center;
 	padding: 0.5em;
 	padding-left: 2em;
@@ -193,14 +197,15 @@ input[type='submit']:hover {
 }
 
 .signout:hover {
-	color: white;
-	background-color: #4f42ec;
+	color: #4f42ec;
+	background-color: white;
 }
 
 .box {
 	border: 1px solid #4f42ec;
 	padding: 10px 20px;
 	margin: 20px 0px;
+	background-color: white;
 }
 
 .notice {
@@ -241,12 +246,13 @@ input[type='submit']:hover {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: white;
 }
 
 .navbar div {
-	font-size: 1.8rem;
-	font-family: 'CircularStd-Bold';
-	color: white;
+	font-size: 2.3rem;
+	font-family: 'CircularStd-Black';
+	color: #4f42ec;
 }
 
 input[type='checkbox'] {
@@ -260,5 +266,5 @@ input[type='checkbox'] {
 .navleft span {
 	font-size: 1rem;
 	font-family: 'CircularStd-Book';
-	color: white;
+	color: #4f42ec;
 }

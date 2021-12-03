@@ -12,7 +12,9 @@
     <div class='navbar'>
       <div class='navleft'>
         journal. 
-        <span>for <%= current_user.email %></span>
+        <% if user_signed_in? %>
+          <span>for <%= current_user.email %></span>
+        <% end %>
       </div>
       <% if user_signed_in? %>
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'signout' %>
