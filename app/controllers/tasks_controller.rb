@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_category, only: %i[create show edit update destroy]
     before_action :set_category_task, only: %i[show edit update destroy]
 

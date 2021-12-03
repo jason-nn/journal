@@ -31,6 +31,15 @@
 	src: url(CircularStd-Medium.otf);
 }
 
+* {
+	margin: 0;
+}
+
+.main {
+	margin-top: 50px;
+	padding: 33px;
+}
+
 *,
 td,
 p {
@@ -42,6 +51,7 @@ p {
 h1,
 h2 {
 	font-family: 'CircularStd-Bold';
+	padding: 10px 0px;
 }
 
 h1 {
@@ -164,6 +174,29 @@ input[type='submit']:hover {
 	background-color: white;
 }
 
+.signout {
+	text-decoration: none;
+	font-family: 'CircularStd-Bold';
+	color: #785dfb;
+	background-color: white;
+	border: 1px solid white;
+	text-align: center;
+	padding: 0.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+	border-radius: 100px;
+	cursor: pointer;
+	margin: 20px 0px;
+	display: block;
+	width: max-content;
+	margin-right: 33px;
+}
+
+.signout:hover {
+	color: white;
+	background-color: #785dfb;
+}
+
 .box {
 	border: 1px solid #785dfb;
 	padding: 10px 20px;
@@ -198,4 +231,26 @@ input[type='submit']:hover {
 	border: 1px solid #ea4435;
 	background-color: #ea4435;
 	color: white;
+}
+
+.navbar {
+	width: 100vw;
+	height: 60px;
+	background-color: #785dfb;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar div {
+	font-size: 1.8rem;
+	font-family: 'CircularStd-Bold';
+	color: white;
+}
+
+input[type='checkbox'] {
+	width: 10px;
 }

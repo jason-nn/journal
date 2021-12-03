@@ -2,19 +2,29 @@
 <html>
 	<head>
 		<title>Journal</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name='viewport' content='width=device-width,initial-scale=1'>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 	<body>
-		<%= yield %>
+    <div class='navbar'>
+      <div style='margin-left: 33px;'>journal.</div>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'signout' %>
+      <% end %>
+    </div>
+
+    <div class='main'>
+      <%= yield %>
+    </div>
+
     <% if notice %>
-      <div class="notice"><%= notice %></div>
+      <div class='notice'><%= notice %></div>
     <% end %>
     <% if alert %>
-      <div class="alert"><%= alert %></div>
+      <div class='alert'><%= alert %></div>
     <% end %>
 	</body>
 </html>
