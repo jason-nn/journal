@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Model Spec: Category', type: :model do
     before :each do
+        @user = create(:user)
         @name = 'Category'
-        @category = Category.create(name: @name)
+        @category = Category.create(name: @name, user_id: @user.id)
     end
 
     it 'should not catch fire when you create an instance' do
