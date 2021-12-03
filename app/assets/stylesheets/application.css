@@ -184,3 +184,18 @@ input[type='submit']:hover {
 	background-color: #00cc7d;
 	color: white;
 }
+
+.alert {
+	font-family: 'CircularStd-Bold';
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	margin: 20px 20px;
+	background-color: #f7f6fa;
+	border: 1px solid #ea4435;
+	background-color: #ea4435;
+	color: white;
+}

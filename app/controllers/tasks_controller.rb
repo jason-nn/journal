@@ -17,7 +17,8 @@ class TasksController < ApplicationController
             redirect_to category_path(@category),
                         notice: 'Task was successfully created.'
         else
-            redirect_to category_path(@category)
+            redirect_to category_path(@category),
+                        alert: 'Task was not successfully created. Please fill in all fields.'
         end
     end
 
