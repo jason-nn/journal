@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Request Spec: Task', type: :request do
   before :each do
-    sign_in create(:user)
+    @user = create(:user)
+    sign_in @user
   end
 
   it 'GET /' do
@@ -18,11 +19,12 @@ RSpec.describe 'Request Spec: Task', type: :request do
   end
 
   it 'GET /categories/:category_id/tasks/:id/edit' do
-    task = Category.create(name: 'Test')
+    task = Category.create(name: 'Test', user_id: @user.id)
     .tasks.create(
       name: 'Task', 
       details: 'task details', 
-      date: Date.today
+      date: Date.today, 
+      user_id: @user.id  
     )
     get edit_category_task_path(task.category, task)
     expect(response).to have_http_status(200)
@@ -30,11 +32,12 @@ RSpec.describe 'Request Spec: Task', type: :request do
   end
 
   it 'GET /categories/:category_id/tasks/:id' do
-    task = Category.create(name: 'Test')
+    task = Category.create(name: 'Test', user_id: @user.id)
     .tasks.create(
       name: 'Task', 
       details: 'task details', 
-      date: Date.today
+      date: Date.today, 
+      user_id: @user.id
     )
     get category_task_path(task.category, task)
     expect(response).to have_http_status(200)
