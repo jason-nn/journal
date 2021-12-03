@@ -5,6 +5,8 @@ ruby '3.0.2'
 
 gem 'rails-controller-testing'
 gem 'devise'
+gem 'factory_bot_rails'
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'

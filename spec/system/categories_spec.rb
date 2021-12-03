@@ -19,6 +19,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'All Categories' do
 
       before :each do
+        sign_in create(:user)
         visit categories_path
       end
 
@@ -47,6 +48,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Creating a Category' do
       
       before :each do
+        sign_in create(:user)
         visit categories_path
         click_on 'New Category'
         fill_in 'Name', with: 'Ateneo'
@@ -66,6 +68,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Reading a Category' do
 
       before :each do
+        sign_in create(:user)
         visit categories_path
         click_on 'Show'
       end
@@ -98,6 +101,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Updating a Category' do
 
       before :each do
+        sign_in create(:user)
         visit category_path(@avion)
         click_on 'Edit'
         fill_in 'Name', with: 'Avion School'
@@ -117,6 +121,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
     describe 'Destroying a Category' do
 
       before :each do
+        sign_in create(:user)
         visit categories_path
         click_on 'Destroy'
       end

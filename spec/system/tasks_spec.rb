@@ -26,6 +26,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Today\'s Tasks' do
 
       before :each do
+        sign_in create(:user)
         visit root_path
       end
 
@@ -64,6 +65,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'All Tasks' do
 
       before :each do
+        sign_in create(:user)
         visit tasks_path
       end
 
@@ -90,6 +92,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Creating a Task' do
       
       before :each do
+        sign_in create(:user)
         visit category_path(@avion)
         fill_in 'Name', with: 'Presentation'
         fill_in 'Details', with: 'present journal app on Saturday'
@@ -109,6 +112,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Reading a Task' do
 
       before :each do
+        sign_in create(:user)
         visit category_path(@avion)
         click_on 'Show'
       end
@@ -140,6 +144,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Updating a Task' do
 
       before :each do
+        sign_in create(:user)
         visit category_path(@avion)
         click_on 'Show'
         click_on 'Edit'
@@ -160,6 +165,7 @@ RSpec.describe 'System Spec: Tasks', type: :system do
     describe 'Destroying a Task' do
 
       before :each do
+        sign_in create(:user)
         visit category_path(@avion)
         click_on 'Destroy'
       end
