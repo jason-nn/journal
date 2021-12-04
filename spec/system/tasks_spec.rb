@@ -117,6 +117,21 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         fill_in 'Details', with: 'present journal app on Saturday'
         click_on 'Create Task'
       end
+
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page).to have_content('Categories')
+      end
+      
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page).to have_content('All Tasks')
+      end
+
+      it 'has a link that goes back to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
+      end
       
       it 'creates a task' do
         expect(page).to have_content('Presentation')
@@ -134,6 +149,21 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         sign_in @user
         visit category_path(@avion)
         click_on 'Show'
+      end
+
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page).to have_content('Categories')
+      end
+      
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page).to have_content('All Tasks')
+      end
+
+      it 'has a link that goes back to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
       end
     
       it 'shows task name' do
@@ -169,6 +199,21 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         click_on 'Edit'
         fill_in 'Name', with: 'Journal System Specs'
         click_on 'Update Task'
+      end
+
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page).to have_content('Categories')
+      end
+      
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page).to have_content('All Tasks')
+      end
+
+      it 'has a link that goes back to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
       end
     
       it 'updates a task' do

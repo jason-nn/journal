@@ -68,6 +68,23 @@ RSpec.describe 'System Spec: Categories', type: :system do
         fill_in 'Name', with: 'Ateneo'
         click_on 'Create Category'
       end
+
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page.html).to have_content('Categories')
+        expect(page.html).to have_content('Avion')
+      end
+
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page.html).to have_content('All Tasks')
+      end
+      
+      it 'has a link that goes to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
+        expect(page).to have_content(Date.today)
+      end
       
       it 'creates a category' do
         expect(page).to have_content('Ateneo')
@@ -131,6 +148,23 @@ RSpec.describe 'System Spec: Categories', type: :system do
         click_on 'Edit'
         fill_in 'Name', with: 'Avion School'
         click_on 'Update Category'
+      end
+
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page.html).to have_content('Categories')
+        expect(page.html).to have_content('Avion')
+      end
+
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page.html).to have_content('All Tasks')
+      end
+      
+      it 'has a link that goes to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
+        expect(page).to have_content(Date.today)
       end
     
       it 'updates a category' do
