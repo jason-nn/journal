@@ -123,11 +123,6 @@ RSpec.describe 'System Spec: Categories', type: :system do
         expect(page).to have_content('System Specs')
       end
 
-      it 'has a link that goes to edit' do
-        click_on 'Edit'
-        expect(page).to have_content('Edit Category')
-      end
-
       it 'has a link that goes to all categories' do
         click_on 'Categories'
         expect(page).to have_content('Categories')
@@ -156,7 +151,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
 
       before :each do
         sign_in @user
-        visit category_path(@avion)
+        visit categories_path
         click_on 'Edit'
       end
 
