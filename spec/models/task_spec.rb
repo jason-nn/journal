@@ -44,4 +44,10 @@ RSpec.describe 'Model Spec: Task', type: :model do
             @category.tasks.create(name: @name, details: @details, date: nil, user_id: @user.id),
         ).not_to be_valid
     end
+
+    it 'should need a user id to be valid' do
+        expect(
+            @category.tasks.create(name: @name, details: @details, date: @date, user_id: nil),
+        ).not_to be_valid
+    end
 end
