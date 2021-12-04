@@ -1,8 +1,9 @@
 <h1>Today's Tasks</h1>
 <h2><%= Date.today %></h2>
-<% if @tasks.length == 0 %>
+<% if @tasks.length <= 0 %>
 	<div class='box'>
 		<h2>No tasks for today yet.</h2>
 	</div>
+<% else %>
+  <%= render @tasks %>
 <% end %>
-<%= render @tasks %>
