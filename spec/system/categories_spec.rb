@@ -42,13 +42,13 @@ RSpec.describe 'System Spec: Categories', type: :system do
 
       it 'has a link that goes to all categories' do
         click_on 'Categories'
-        expect(page.html).to have_content('Categories')
-        expect(page.html).to have_content('Avion')
+        expect(page).to have_content('Categories')
+        expect(page).to have_content('Avion')
       end
 
       it 'has a link that goes to all tasks' do
         click_on 'All Tasks'
-        expect(page.html).to have_content('All Tasks')
+        expect(page).to have_content('All Tasks')
       end
       
       it 'has a link that goes to today\'s tasks' do
@@ -71,13 +71,13 @@ RSpec.describe 'System Spec: Categories', type: :system do
 
       it 'has a link that goes to all categories' do
         click_on 'Categories'
-        expect(page.html).to have_content('Categories')
-        expect(page.html).to have_content('Avion')
+        expect(page).to have_content('Categories')
+        expect(page).to have_content('Avion')
       end
-
+      
       it 'has a link that goes to all tasks' do
         click_on 'All Tasks'
-        expect(page.html).to have_content('All Tasks')
+        expect(page).to have_content('All Tasks')
       end
       
       it 'has a link that goes to today\'s tasks' do
@@ -89,9 +89,15 @@ RSpec.describe 'System Spec: Categories', type: :system do
       it 'creates a category' do
         expect(page).to have_content('Ateneo')
       end
-
+      
       it 'shows a success notice' do
         expect(page).to have_content('Category was successfully created.')
+      end
+
+      it 'has a backlink' do 
+        click_on 'New Category'
+        click_on 'Back'
+        expect(page).to have_content('Categories')
       end
 
     end
@@ -123,19 +129,24 @@ RSpec.describe 'System Spec: Categories', type: :system do
 
       it 'has a link that goes to all categories' do
         click_on 'Categories'
-        expect(page.html).to have_content('Categories')
-        expect(page.html).to have_content('Avion')
+        expect(page).to have_content('Categories')
+        expect(page).to have_content('Avion')
       end
 
       it 'has a link that goes to all tasks' do
         click_on 'All Tasks'
-        expect(page.html).to have_content('All Tasks')
+        expect(page).to have_content('All Tasks')
       end
       
       it 'has a link that goes to today\'s tasks' do
         click_on 'Today\'s Tasks'
         expect(page).to have_content('Today\'s Tasks')
         expect(page).to have_content(Date.today)
+      end
+
+      it 'has a backlink' do 
+        click_on 'Back'
+        expect(page).to have_content('Categories')
       end
 
     end
@@ -152,13 +163,13 @@ RSpec.describe 'System Spec: Categories', type: :system do
 
       it 'has a link that goes to all categories' do
         click_on 'Categories'
-        expect(page.html).to have_content('Categories')
-        expect(page.html).to have_content('Avion')
+        expect(page).to have_content('Categories')
+        expect(page).to have_content('Avion')
       end
 
       it 'has a link that goes to all tasks' do
         click_on 'All Tasks'
-        expect(page.html).to have_content('All Tasks')
+        expect(page).to have_content('All Tasks')
       end
       
       it 'has a link that goes to today\'s tasks' do
@@ -173,6 +184,13 @@ RSpec.describe 'System Spec: Categories', type: :system do
 
       it 'shows a success notice' do
         expect(page).to have_content('Category was successfully updated.')
+      end
+
+      it 'has a backlink' do 
+        visit category_path(@avion)
+        click_on 'Edit'
+        click_on 'Back'
+        expect(page).to have_content('Categories')
       end
 
     end
