@@ -1,9 +1,9 @@
-<div class="box">
+<div class='box'>
 	<h2><%= @task.name %></h2>
 	<table>
 		<thead>
 			<tr>
-				<th colspan="3"></th>
+				<th colspan='3'></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,6 +22,6 @@
 		</tbody>
 	</table>
 </div>
-<%= link_to 'Edit', edit_category_task_path(@task.category, @task), :class => "redirect" %>
-<%= link_to 'Back', category_path(@category), :class => "redirect" %>
+<%= link_to 'Edit', edit_category_task_path(@task.category, @task), :class => 'redirect' %>
+<%= link_to 'Back', :back, :class => 'redirect' %>
 

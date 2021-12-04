@@ -1,9 +1,9 @@
-<div class="box">
+<div class='box'>
 	<h2>Edit a Task</h2>
 	<%= form_with model: [ @category, @task ] do |form| %>
 		<% if  @task.errors.any? %>
-			<div id="error_explanation">
-				<h2><%= pluralize( @task.errors.count, "error") %> prohibited this task from being saved:</h2>
+			<div id='error_explanation'>
+				<h2><%= pluralize( @task.errors.count, 'error') %> prohibited this task from being saved:</h2>
 				<ul>
 					<%  @task.errors.each do |error| %>
 						<li><%= error.full_message %></li>
@@ -11,22 +11,22 @@
 				</ul>
 			</div>
 		<% end %>
-		<div class="field">
+		<div class='field'>
 			<%= form.label :name %>
 			<%= form.text_field :name %>
 		</div>
-		<div class="field">
+		<div class='field'>
 			<%= form.label :details %>
 			<%= form.text_area :details %>
 		</div>
-		<div class="field">
+		<div class='field'>
 			<%= form.label :date %>
 			<%= form.date_select :date %>
 		</div>
-		<div class="actions">
+		<div class='actions'>
 			<%= form.submit %>
 		</div>
 	<% end %>
 </div>
-<%= link_to 'Back', category_task_path(@task.category, @task), :class => "redirect" %>
+<%= link_to 'Back', :back, :class => 'redirect' %>
 
