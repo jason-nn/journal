@@ -1,24 +1,31 @@
 <h1>Categories</h1>
-<div class='box'>
-	<table>
-		<thead>
-			<tr>
-				<th colspan='3'></th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @categories.each do |category| %>
-				<tr>
-					<td><%= category.name %></td>
-					<td><%= link_to 'Show', category %></td>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-					<td>
-						<%= link_to 'Destroy', category, method: :delete, data: {
-                    	confirm: 'Are you sure? This will delete all tasks under this category.' } %>
-					</td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-</div>
+<% if @categories.length == 0 %>
+  <div class='box'>
+    <h2>No categories yet.</h2>
+  </div>
+<% end %>
+<% if @categories.length >0 %>
+  <div class='box'> 
+    <table>
+      <thead>
+        <tr>
+          <th colspan='3'></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= link_to 'Show', category %></td>
+            <td><%= link_to 'Edit', edit_category_path(category) %></td>
+            <td>
+              <%= link_to 'Destroy', category, method: :delete, data: {
+                confirm: 'Are you sure? This will delete all tasks under this category.' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>  
+<% end %>
 <%= link_to 'New Category', new_category_path, :class => 'redirect' %>
