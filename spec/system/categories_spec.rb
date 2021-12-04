@@ -65,8 +65,6 @@ RSpec.describe 'System Spec: Categories', type: :system do
         sign_in @user
         visit categories_path
         click_on 'New Category'
-        fill_in 'Name', with: 'Ateneo'
-        click_on 'Create Category'
       end
 
       it 'has a link that goes to all categories' do
@@ -87,15 +85,18 @@ RSpec.describe 'System Spec: Categories', type: :system do
       end
       
       it 'creates a category' do
+        fill_in 'Name', with: 'Ateneo'
+        click_on 'Create Category'
         expect(page).to have_content('Ateneo')
       end
       
       it 'shows a success notice' do
+        fill_in 'Name', with: 'Ateneo'
+        click_on 'Create Category'
         expect(page).to have_content('Category was successfully created.')
       end
 
       it 'has a backlink' do 
-        click_on 'New Category'
         click_on 'Back'
         expect(page).to have_content('Categories')
       end
@@ -157,8 +158,6 @@ RSpec.describe 'System Spec: Categories', type: :system do
         sign_in @user
         visit category_path(@avion)
         click_on 'Edit'
-        fill_in 'Name', with: 'Avion School'
-        click_on 'Update Category'
       end
 
       it 'has a link that goes to all categories' do
@@ -179,16 +178,18 @@ RSpec.describe 'System Spec: Categories', type: :system do
       end
     
       it 'updates a category' do
+        fill_in 'Name', with: 'Avion School'
+        click_on 'Update Category'
         expect(page).to have_content('Avion School')
       end
 
       it 'shows a success notice' do
+        fill_in 'Name', with: 'Avion School'
+        click_on 'Update Category'
         expect(page).to have_content('Category was successfully updated.')
       end
 
       it 'has a backlink' do 
-        visit category_path(@avion)
-        click_on 'Edit'
         click_on 'Back'
         expect(page).to have_content('Categories')
       end
