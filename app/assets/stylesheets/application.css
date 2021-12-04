@@ -36,7 +36,7 @@
 }
 
 .main {
-	margin-top: 65px;
+	margin-top: 80px;
 	padding: 33px;
 }
 
@@ -242,7 +242,7 @@ input[type='submit']:hover {
 
 .navbar {
 	width: 100vw;
-	height: 65px;
+	height: 80px;
 	background-color: #4f42ec;
 	position: fixed;
 	top: 0;
