@@ -1,9 +1,9 @@
 <div class='grid-2'>
   <div class='grid-2-left'>
-    <% if Time.now.hour > 17 %>
-      <img src='/images/moon-clouds.svg'>
-    <% else %>
+    <% if Time.now.hour >= 6  && Time.now.hour <= 18 %>
       <img src='/images/sun-clouds.svg'>
+    <% else %>
+      <img src='/images/moon-clouds.svg'>
     <% end %>
   </div>
   <div class='grid-2-right'>
