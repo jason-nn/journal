@@ -23,6 +23,9 @@
 	</table>
   
   <br />
+  <%= link_to 'Edit', edit_category_task_path(task.category, task) %>
+
+  <%= ' | ' %>
   <%= link_to 'Destroy', [task.category, task], method: :delete, 
         data: { confirm: 'Are you sure?' } %>
   <br />
