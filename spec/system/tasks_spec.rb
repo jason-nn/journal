@@ -178,11 +178,6 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         expect(page).to have_content(Date.today)
       end
 
-      it 'has a link that goes to edit' do
-        click_on 'Edit'
-        expect(page).to have_content('Edit a Task')
-      end
-
       it 'has a link that goes to back to category' do
         click_on 'Back'
         expect(page.html).to have_content('Avion')
@@ -195,7 +190,6 @@ RSpec.describe 'System Spec: Tasks', type: :system do
       before :each do
         sign_in @user
         visit category_path(@avion)
-        click_on 'Show'
         click_on 'Edit'
         fill_in 'Name', with: 'Journal System Specs'
         click_on 'Update Task'
