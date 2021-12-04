@@ -39,8 +39,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to category_path(@category),
-      notice: 'Task was successfully destroyed.'
+    redirect_back(fallback_location: root_path, notice: 'Task was successfully destroyed.')
   end
 
   private
