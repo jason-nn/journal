@@ -96,7 +96,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
         expect(page).to have_content('Category was successfully created.')
       end
 
-      it 'has a backlink' do 
+      it 'has a backlink that goes back to all categories' do 
         click_on 'Back'
         expect(page).to have_content('Categories')
       end
@@ -145,7 +145,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
         expect(page).to have_content(Date.today)
       end
 
-      it 'has a backlink' do 
+      it 'has a backlink that goes back to all categories' do 
         click_on 'Back'
         expect(page).to have_content('Categories')
       end
@@ -189,7 +189,7 @@ RSpec.describe 'System Spec: Categories', type: :system do
         expect(page).to have_content('Category was successfully updated.')
       end
 
-      it 'has a backlink' do 
+      it 'has a backlink that goes back to all categories' do 
         click_on 'Back'
         expect(page).to have_content('Categories')
       end
