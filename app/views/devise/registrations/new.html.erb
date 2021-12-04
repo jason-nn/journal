@@ -1,29 +1,45 @@
-<h2>Sign up</h2>
+<div class='grid-2'>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render 'devise/shared/error_messages', resource: resource %>
-
-  <div class='field'>
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+  <div class='grid-2-left'>
+    <% if Time.now.hour > 16 %>
+      <img src='/images/moon-clouds.svg'>
+    <% else %>
+      <img src='/images/sun-clouds.svg'>
+    <% end %>
   </div>
 
-  <div class='field'>
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: 'new-password' %>
+  <div>
+
+    <h2>Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render 'devise/shared/error_messages', resource: resource %>
+
+      <div class='field'>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: 'new-password' %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: 'new-password' %>
+      </div>
+
+      <div class='actions'>
+        <%= f.submit 'Sign up' %>
+      </div>
+    <% end %>
+
+    <%= render 'devise/shared/links' %>
+
   </div>
 
-  <div class='field'>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: 'new-password' %>
-  </div>
-
-  <div class='actions'>
-    <%= f.submit 'Sign up' %>
-  </div>
-<% end %>
-
-<%= render 'devise/shared/links' %>
+</div>
