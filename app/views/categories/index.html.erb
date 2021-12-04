@@ -9,13 +9,16 @@
     <table>
       <thead>
         <tr>
-          <th colspan='4'></th>
+          <th colspan='5'></th>
         </tr>
       </thead>
       <tbody>
         <% @categories.each do |category| %>
           <tr>
-            <td><%= category.name %></td>
+            <td><img src='/images/mail.svg' /></td>
+            <td>
+              <span class='name marginright'><%= category.name %></span>
+            </td>
             <td><%= link_to 'Show', category %></td>
             <td><%= link_to 'Edit', edit_category_path(category) %></td>
             <td>

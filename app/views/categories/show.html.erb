@@ -1,3 +1,4 @@
+<img src='/images/mail.svg' />
 <h1><%= @category.name %></h1>
 <% if @category.tasks.length <= 0 %>
   <div class='box'>
@@ -16,8 +17,16 @@
 		<tbody>
 			<% @category.tasks.each do |task| %>
 				<tr>
-					<td><%= task.date %></td>
-					<td><%= task.name %></td>
+          <td>
+            <% if task.date == Date.today %>
+              <img src='/images/bookmark-fav.svg' />
+            <% else %>
+              <img src='/images/bookmark.svg' />
+            <% end %>
+          </td>
+					<td>
+            <span class='name marginright'><%= task.name %></span>
+          </td>
 					<td><%= link_to 'Show', category_task_path(task.category, task) %></td>
           <td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
 					<td><%= link_to 'Destroy', [task.category, task], method: :delete, 

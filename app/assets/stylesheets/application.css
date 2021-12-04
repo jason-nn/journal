@@ -295,3 +295,8 @@ input[type='checkbox'] {
 	width: 200px;
 	height: auto;
 }
+
+.name {
+	font-size: 1.3em;
+	margin-right: 30px;
+}

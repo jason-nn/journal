@@ -1,4 +1,9 @@
 <div class='box'>
+  <% if task.date == Date.today %>
+    <img src='/images/bookmark-fav.svg' />
+  <% else %>
+    <img src='/images/bookmark.svg' />
+  <% end %>
 	<h2><%= task.name %></h2>
 	<table>
 		<thead>
