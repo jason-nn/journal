@@ -78,6 +78,10 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         visit tasks_path
       end
 
+      after :all do 
+        @swarm.destroy
+      end
+
       it 'shows title' do
         expect(page).to have_content('All Tasks')
       end
@@ -220,19 +224,70 @@ RSpec.describe 'System Spec: Tasks', type: :system do
 
     end
 
-    describe 'Destroying a Task' do
+    describe 'Destroying a Task from Categories' do
 
       before :each do
         sign_in @user
         visit category_path(@avion)
-        click_on 'Destroy'
-      end
-    
-      it 'destroys a task' do
-        expect(page).not_to have_content('System Specs')
       end
 
+      it 'has a destroy link' do
+        expect(page).to have_content('Destroy')
+      end
+      
+      it 'destroys a task' do
+        click_on 'Destroy'
+        expect(page).not_to have_content('System Specs')
+      end
+      
       it 'shows a success notice' do
+        click_on 'Destroy'
+        expect(page).to have_content('Task was successfully destroyed.')
+      end
+
+    end
+
+    describe 'Destroying a Task from All Tasks' do
+
+      before :each do
+        sign_in @user
+        visit tasks_path
+      end
+
+      it 'has a destroy link' do
+        expect(page).to have_content('Destroy')
+      end
+      
+      it 'destroys a task' do
+        click_on 'Destroy'
+        expect(page).not_to have_content('System Specs')
+      end
+      
+      it 'shows a success notice' do
+        click_on 'Destroy'
+        expect(page).to have_content('Task was successfully destroyed.')
+      end
+
+    end
+    
+    describe 'Destroying a Task from All Tasks' do
+      
+      before :each do
+        sign_in @user
+        visit root_path
+      end
+      
+      it 'has a destroy link' do
+        expect(page).to have_content('Destroy')
+      end
+      
+      it 'destroys a task' do
+        click_on 'Destroy'
+        expect(page).not_to have_content('System Specs')
+      end
+      
+      it 'shows a success notice' do
+        click_on 'Destroy'
         expect(page).to have_content('Task was successfully destroyed.')
       end
 
