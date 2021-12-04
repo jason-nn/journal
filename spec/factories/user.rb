@@ -3,4 +3,4 @@ FactoryBot.define do
     email { "test@test.com" }
     password { "password" }
   end
-end 
+end
