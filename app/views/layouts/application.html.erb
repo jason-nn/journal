@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>journal.</title>
+		<title>todo.</title>
 		<meta name='viewport' content='width=device-width,initial-scale=1'>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
@@ -14,7 +14,7 @@
       <div class='navleft'>
         <img src='/images/journal.svg' class='navlogo' />
         <div class='navlefttext'>
-          journal. 
+          todo. 
           <% if user_signed_in? %>
             <span>for <%= current_user.email %></span>
           <% else %>
