@@ -11,10 +11,15 @@
 	<body>
     <div class='navbar'>
       <div class='navleft'>
-        journal. 
-        <% if user_signed_in? %>
-          <span>for <%= current_user.email %></span>
-        <% end %>
+        <img src='/journaldown.svg' alt='logo' class='navlogo' />
+        <div class='navlefttext'>
+          journal. 
+          <% if user_signed_in? %>
+            <span>for <%= current_user.email %></span>
+          <% else %>
+            <span style='color: white;'>.</span>
+          <% end %>
+        </div>
       </div>
       <% if user_signed_in? %>
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'signout' %>
