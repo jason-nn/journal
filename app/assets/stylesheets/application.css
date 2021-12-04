@@ -261,10 +261,18 @@ input[type='checkbox'] {
 
 .navleft {
 	margin-left: 33px;
+	display: flex;
+	align-items: center;
 }
 
 .navleft span {
 	font-size: 1rem;
 	font-family: 'CircularStd-Book';
 	color: #4f42ec;
+}
+
+.navlogo {
+	width: 60px;
+	height: auto;
+	margin-right: 10px;
 }
