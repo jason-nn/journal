@@ -34,14 +34,25 @@ RSpec.describe 'System Spec: Categories', type: :system do
         expect(page).to have_content('Avion')
       end
 
-      it 'has a button that goes to create a new category' do
+      it 'has a link that goes to create a new category' do
         click_on 'New Category'
         expect(page).to have_content('New Category')
         expect(page).to have_content('Name')
       end
+
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page.html).to have_content('Categories')
+        expect(page.html).to have_content('Avion')
+      end
+
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page.html).to have_content('All Tasks')
+      end
       
-      it 'has a button that goes to today\'s tasks' do
-        click_on 'Back'
+      it 'has a link that goes to today\'s tasks' do
+        click_on 'Today\'s Tasks'
         expect(page).to have_content('Today\'s Tasks')
         expect(page).to have_content(Date.today)
       end
@@ -88,15 +99,26 @@ RSpec.describe 'System Spec: Categories', type: :system do
         expect(page).to have_content('System Specs')
       end
 
-      it 'has a button that goes to edit' do
+      it 'has a link that goes to edit' do
         click_on 'Edit'
         expect(page).to have_content('Edit Category')
       end
 
-      it 'has a button that goes to back to all categories' do
-        click_on 'Back'
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
         expect(page.html).to have_content('Categories')
         expect(page.html).to have_content('Avion')
+      end
+
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page.html).to have_content('All Tasks')
+      end
+      
+      it 'has a link that goes to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
+        expect(page).to have_content(Date.today)
       end
 
     end

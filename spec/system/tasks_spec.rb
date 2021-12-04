@@ -54,14 +54,19 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         expect(page).not_to have_content('set up local environment and install necessary packages')
       end
 
-      it 'has a button that goes to all categories' do
+      it 'has a link that goes to all categories' do
         click_on 'Categories'
         expect(page).to have_content('Categories')
       end
       
-      it 'has a button that goes to all tasks' do
-        click_on 'Tasks'
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
         expect(page).to have_content('All Tasks')
+      end
+
+      it 'has a link that goes back to today\'s tasks' do
+        click_on 'Today\'s Tasks'
+        expect(page).to have_content('Today\'s Tasks')
       end
 
     end
@@ -86,8 +91,18 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         expect(page).to have_content('set up local environment and install necessary packages')
       end
 
-      it 'has a button that goes back to today\'s tasks' do
-        click_on 'Back'
+      it 'has a link that goes to all categories' do
+        click_on 'Categories'
+        expect(page).to have_content('Categories')
+      end
+      
+      it 'has a link that goes to all tasks' do
+        click_on 'All Tasks'
+        expect(page).to have_content('All Tasks')
+      end
+
+      it 'has a link that goes back to today\'s tasks' do
+        click_on 'Today\'s Tasks'
         expect(page).to have_content('Today\'s Tasks')
       end
 
@@ -133,12 +148,12 @@ RSpec.describe 'System Spec: Tasks', type: :system do
         expect(page).to have_content(Date.today)
       end
 
-      it 'has a button that goes to edit' do
+      it 'has a link that goes to edit' do
         click_on 'Edit'
         expect(page).to have_content('Edit a Task')
       end
 
-      it 'has a button that goes to back to category' do
+      it 'has a link that goes to back to category' do
         click_on 'Back'
         expect(page.html).to have_content('Avion')
       end
