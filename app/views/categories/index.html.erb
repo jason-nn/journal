@@ -1,21 +1,19 @@
 <h1>Categories</h1>
-<% if @categories.length == 0 %>
+<% if @categories.length <= 0 %>
   <div class='box'>
     <h2>No categories yet.</h2>
   </div>
-<% end %>
-<% if @categories.length >0 %>
+<% else %>
   <div class='box'> 
     <table>
       <thead>
         <tr>
-          <th colspan='5'></th>
+          <th colspan='4'></th>
         </tr>
       </thead>
       <tbody>
         <% @categories.each do |category| %>
           <tr>
-            <td><img src='/images/bookmark.svg' /></td>
             <td><%= category.name %></td>
             <td><%= link_to 'Show', category %></td>
             <td><%= link_to 'Edit', edit_category_path(category) %></td>
