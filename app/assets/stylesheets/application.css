@@ -36,7 +36,7 @@
 }
 
 .main {
-	margin-top: 50px;
+	margin-top: 65px;
 	padding: 33px;
 }
 
@@ -242,7 +242,7 @@ input[type='submit']:hover {
 
 .navbar {
 	width: 100vw;
-	height: 60px;
+	height: 65px;
 	background-color: #4f42ec;
 	position: fixed;
 	top: 0;
@@ -302,25 +302,33 @@ input[type='checkbox'] {
 }
 
 .grid-2 {
-	width: 100%;
-	height: 100%;
+	margin: -33px;
+	width: 100vw;
+	height: calc(100vh - 125px);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto;
 	align-items: center;
 	justify-items: center;
-	margin-top: 100px;
+	padding-top: 60px;
+	background-color: #4f42ec;
 }
 
 .grid-2-left {
-	width: 500px;
-	height: 500px;
+	width: 100%;
+	height: 100%;
 	display: flex;
-	justify-items: center;
+	justify-content: center;
 	align-items: center;
 }
 
 .grid-2-left img {
 	width: 500px;
 	height: auto;
+}
+
+.grid-2-right {
+	border: 1px solid #4f42ec;
+	padding: 40px;
+	background-color: white;
 }
