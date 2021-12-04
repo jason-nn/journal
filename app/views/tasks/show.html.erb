@@ -23,5 +23,5 @@
 	</table>
 </div>
 <%= link_to 'Edit', edit_category_task_path(@task.category, @task), :class => 'redirect' %>
-<%= link_to 'Back', :back, :class => 'redirect' %>
+<%= link_to 'Back', category_task_path(@task.category, @task), :class => 'redirect' %>
 
