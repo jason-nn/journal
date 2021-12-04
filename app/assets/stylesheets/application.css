@@ -193,7 +193,6 @@ input[type='submit']:hover {
 	margin: 20px 0px;
 	display: block;
 	width: max-content;
-	margin-right: 33px;
 }
 
 .signout:hover {
@@ -268,11 +267,21 @@ input[type='checkbox'] {
 .navleft span {
 	font-size: 1rem;
 	font-family: 'CircularStd-Book';
-	color: #4f42ec;
+	color: black;
 }
 
 .navlogo {
 	width: 60px;
 	height: auto;
 	margin-right: 10px;
+}
+
+.navright {
+	margin-right: 33px;
+	display: flex;
+	align-items: center;
+}
+
+.navlink {
+	margin-right: 20px;
 }
