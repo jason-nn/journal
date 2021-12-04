@@ -4,29 +4,28 @@
   <% else %>
     <img src='/images/bookmark.svg' />
   <% end %>
-	<h2><%= task.name %></h2>
-	<table>
-		<thead>
-			<tr>
-				<th colspan='2'></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Category:</td>
-				<td><%= task.category.name %></td>
-			</tr>
-			<tr>
-				<td>Details:</td>
-				<td><%= task.details %></td>
-			</tr>
-			<tr>
-				<td>Date:</td>
-				<td><%= task.date %></td>
-			</tr>
-		</tbody>
-	</table>
-  
+  <h2><%= task.name %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th colspan='2'></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Category:</td>
+        <td><%= task.category.name %></td>
+      </tr>
+      <tr>
+        <td>Details:</td>
+        <td><%= task.details %></td>
+      </tr>
+      <tr>
+        <td>Date:</td>
+        <td><%= task.date %></td>
+      </tr>
+    </tbody>
+  </table>
   <br />
   <%= link_to 'Destroy', [task.category, task], method: :delete, 
         data: { confirm: 'Are you sure?' } %>

@@ -6,56 +6,55 @@
     <h2>No tasks yet.</h2>
   </div>
 <% else %>
-<div class='box'>
-	<h2>Tasks</h2>
-	<table>
-		<thead>
-			<tr>
-				<th colspan='5'></th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @category.tasks.each do |task| %>
-				<tr>
-          <td>
-            <% if task.date == Date.today %>
-              <img src='/images/bookmark-fav.svg' />
-            <% else %>
-              <img src='/images/bookmark.svg' />
-            <% end %>
-          </td>
-					<td>
-            <span class='name marginright'><%= task.name %></span>
-          </td>
-					<td><%= link_to 'Show', category_task_path(task.category, task) %></td>
-          <td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
-					<td><%= link_to 'Destroy', [task.category, task], method: :delete, 
+  <div class='box'>
+    <h2>Tasks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th colspan='5'></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @category.tasks.each do |task| %>
+          <tr>
+            <td>
+              <% if task.date == Date.today %>
+                <img src='/images/bookmark-fav.svg' />
+              <% else %>
+                <img src='/images/bookmark.svg' />
+              <% end %>
+            </td>
+            <td>
+              <span class='name marginright'><%= task.name %></span>
+            </td>
+            <td><%= link_to 'Show', category_task_path(task.category, task) %></td>
+            <td><%= link_to 'Edit', edit_category_task_path(task.category, task) %></td>
+            <td><%= link_to 'Destroy', [task.category, task], method: :delete, 
 					data: { confirm: 'Are you sure?' } %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-</div>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>
 <div class='box'>
-	<h2>Add a Task</h2>
-	<%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-		<div class='field'>
-			<%= form.label :name %>
-			<%= form.text_field :name %>
-		</div>
-		<div class='field'>
-			<%= form.label :details %>
-			<%= form.text_area :details %>
-		</div>
-		<div class='field'>
-			<%= form.label :date %>
-			<%= form.date_select :date %>
-		</div>
-		<div class='actions'>
-			<%= form.submit %>
-		</div>
-	<% end %>
+  <h2>Add a Task</h2>
+  <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+    <div class='field'>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class='field'>
+      <%= form.label :details %>
+      <%= form.text_area :details %>
+    </div>
+    <div class='field'>
+      <%= form.label :date %>
+      <%= form.date_select :date %>
+    </div>
+    <div class='actions'>
+      <%= form.submit %>
+    </div>
+  <% end %>
 </div>
 <%= link_to 'Back', categories_path, :class => 'redirect' %>
-

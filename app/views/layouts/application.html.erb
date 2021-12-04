@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>todo.</title>
-		<meta name='viewport' content='width=device-width,initial-scale=1'>
-		<%= csrf_meta_tags %>
-		<%= csp_meta_tag %>
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <head>
+    <title>todo.</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="icon" type="image/x-icon" href="/images/journal.svg">
-	</head>
-	<body>
+  </head>
+  <body>
     <div class='navbar'>
       <div class='navleft'>
         <img src='/images/journal.svg' class='navlogo' />
@@ -23,24 +23,22 @@
         </div>
       </div>
       <div class='navright'>
-      <% if user_signed_in? %>
-        <%= link_to 'Today\'s Tasks', root_path, :class => 'navlink' %>
-        <%= link_to 'All Tasks', tasks_path, :class => 'navlink' %>
-        <%= link_to 'Categories', categories_path, :class => 'navlink' %>
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'signout' %>
-      <% end %>
+        <% if user_signed_in? %>
+          <%= link_to 'Today\'s Tasks', root_path, :class => 'navlink' %>
+          <%= link_to 'All Tasks', tasks_path, :class => 'navlink' %>
+          <%= link_to 'Categories', categories_path, :class => 'navlink' %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'signout' %>
+        <% end %>
       </div>
     </div>
-
     <div class='main'>
       <%= yield %>
     </div>
-
     <% if notice %>
       <div class='notice'><%= notice %></div>
     <% end %>
     <% if alert %>
       <div class='alert'><%= alert %></div>
     <% end %>
-	</body>
+  </body>
 </html>
