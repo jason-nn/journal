@@ -35,6 +35,8 @@ email: jason@todo.com
 password: password
 <br/>
 
+<br/> \*_please delete categories and tasks that you create while testing_
+
 ## Features
 
 - User is able to create, read, update, and delete tasks
