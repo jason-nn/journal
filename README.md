@@ -31,6 +31,7 @@ https://todobyjason.herokuapp.com/users/sign_in
 ## Sample Credentials\*
 
 email: jason@todo.com
+<br/>
 password: password
 <br/>
 
