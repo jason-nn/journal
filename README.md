@@ -1,24 +1,46 @@
-# README
+# Journal / To Do App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<br/>
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```
+git clone git@github.com:jason-nn/journal.git
+```
 
-* System dependencies
+```
+cd journal
+```
 
-* Configuration
+```
+bundle exec rails webpacker:install
+```
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
+<br/>
 
-* How to run the test suite
+## Demo
 
-* Services (job queues, cache servers, search engines, etc.)
+https://todobyjason.herokuapp.com/users/sign_in
 
-* Deployment instructions
+<br/>
 
-* ...
+## Sample Credentials\*
+
+email: jason@todo.com
+password: password
+<br/>
+
+## Features
+
+- User is able to create, read, update, and delete tasks
+- User is able to create, read, update, and delete categories
+- User is able to create new account
+- User is able to login with credentials
+- User is able to view all tasks for today
+- User is able to view all tasks under all categories
+- User is able to view tasks by category
+- Visual indicator for tasks for today
